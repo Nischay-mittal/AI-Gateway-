@@ -8,6 +8,6 @@ const app= createApp();
 console.log("Config loaded successfully:" , config);
 logger.info("gateway initialisation started");
 
-app.listen(config.PORT,()=>{
+app.listen(config.PORT,"0.0.0.0",()=>{
     logger.info(`AI gateway running on port ${config.PORT} in ${config.NODE_ENV} mode`);
 });
