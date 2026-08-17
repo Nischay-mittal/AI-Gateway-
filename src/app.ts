@@ -4,13 +4,15 @@ import {logger} from "./utils/logger.js";
 import { correlationId } from "./middleware/correlationId.js";
 import {AppError} from "./utils/errors.js";
 import { errorHandler } from "./middleware/errorHandler.js";
+import {v1Router} from "./routes/v1/index.js";
+
 export const createApp=(): Express=> {
     const app= express();
 
     app.use(express.json());
     app.use(correlationId);
     app.use(pinoHttp({logger,genReqId: (req) => req.headers["x-request-id"] as string,}));
-    
+    app.use("/api/v1",v1Router);
     app.get("/health",(req,res)=> {
         res.status(200).json({ status: "ok", timestamp: new Date().toISOString()});
     });
