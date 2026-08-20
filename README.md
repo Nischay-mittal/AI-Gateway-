@@ -1,8 +1,8 @@
-# ⚡ Nexus Gateway
+# AI Gateway
 
 **A production-grade AI Reverse Proxy & Gateway for heterogeneous LLM providers.**
 
-Nexus Gateway sits between your application and OpenAI, Anthropic, and Google Gemini — exposing a single, OpenAI-compatible completions API while handling caching, failover, cost attribution, and streaming under the hood.
+AI Gateway sits between your application and OpenAI, Anthropic, and Google Gemini — exposing a single, OpenAI-compatible completions API while handling caching, failover, cost attribution, and streaming under the hood.
 
 [![TypeScript](https://img.shields.io/badge/TypeScript-5.x-3178C6?logo=typescript&logoColor=white)](https://www.typescriptlang.org/)
 [![Node.js](https://img.shields.io/badge/Node.js-20%2B-339933?logo=node.js&logoColor=white)](https://nodejs.org/)
@@ -14,7 +14,7 @@ Nexus Gateway sits between your application and OpenAI, Anthropic, and Google Ge
 
 ---
 
-## Why Nexus Gateway?
+## Why AI Gateway?
 
 LLM providers don't fail gracefully, don't price consistently, and don't speak the same wire format. Nexus Gateway normalizes all three — so your application talks to **one** endpoint, and the gateway handles the chaos of upstream reality: rate limits, outages, redundant token spend, and inconsistent latency.
 
@@ -172,8 +172,8 @@ Every completion is priced in real time against per-provider, per-tier rate tabl
 ### 1. Clone & Install
 
 ```bash
-git clone https://github.com/your-org/nexus-gateway.git
-cd nexus-gateway
+git clone https://github.com/your-org/AI-Gateway-.git
+cd AI-Gateway-
 npm install
 ```
 
@@ -340,14 +340,14 @@ curl http://localhost:8080/metrics \
    - **Build Command:** `npm install && npm run build`
    - **Start Command:** `npm start`
 4. Add the environment variables from your `.env` file under **Environment**.
-5. Deploy — Render will build on every push to your default branch (validated by the GitHub Actions CI workflow before merge).
+5. Deploy — Render will build on every push to your default branch.
 
 
 
 ## Project Structure
 
 ```
-nexus-gateway/
+AI-Gateway-/
 ├── src/
 │   ├── adapters/          # Provider-specific request/response adapters
 │   ├── cache/              # SHA-256 deterministic cache engine
@@ -356,8 +356,6 @@ nexus-gateway/
 │   ├── cost/                # Token cost attribution engine
 │   ├── routes/              # /v1/chat/completions, /health, /metrics
 │   └── server.ts            # Application entrypoint
-├── Dockerfile
-├── .github/workflows/ci.yml
 ├── tsconfig.json
 └── package.json
 ```
