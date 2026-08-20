@@ -13,4 +13,5 @@ export interface ProviderResponse{
 export interface LLMProvider{
     name:string;
     complete(input:ChatCompletionInput):Promise<ProviderResponse>;
+    completeStream?(input: ChatCompletionInput): AsyncIterable<string>;
 }
